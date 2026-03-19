@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Website</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar" id="navbar">
+    <!-- Left: Menu toggle + Logo -->
+    <div class="navbar-left">
+      <div class="dropdown-menu" id="dropdownMenu">
+        <button class="dropdown-toggle" id="dropdownToggle" onclick="toggleDropdown()">
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="dropdown-content" id="dropdownContent">
+          <div class="dropdown-column">
+            <h3>Company</h3>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="trending.html">Trending Cars</a></li>
+              <li><a href="saved.html">Saved Cars</a></li>
+              <li><a href="#">Work Here</a></li>
+              <li><a href="#">Legal</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Cookie Settings</a></li>
+              <li><a href="#">Cookie Policy</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <h1 class="navbar-logo">ASPIRE!</h1>
+    </div>
+
+    <!-- Right: Search + Auth buttons -->
+       <form action="/search_results.html" method="get" class="search-form">
+        <input type="text" id="site-search" name="q" placeholder="Search...">
+        <button type="submit"><i class="fa fa-search"></i></button>
+      </form>
+      <!-- <button class="login-button"><a href="login.html"></a>login</button>
+      <button class="register-button">Register</button> -->
+    <div class="navbar-right">
+      <div class="account-menu">
+        <button class="avatar-btn">
+          <img src="your-avatar.jpg" alt="User Profile">
+        </button>
+        <div class="dropdown-content">
+        <div class="user-info">
+          <strong>Guest</strong>
+          <p>Welcome!</p>
+        </div>
+        <hr>
+        <a href="/login">Log In</a>
+        <a href="/signup" class="highlight">Create Account</a>
+      </div>
+    
+    </div>
+  </div>
+      
+  </nav>
+  <div class="container">
+    <div class="box">
+      <p><h2>Vroom with a View</h2></p>
+      <p>Feel the Thrill. Own the Road</p>
+      <div class="image-container">
+        <!-- <img src="images/Tai Long.jpg" alt="Description of the image"> -->
+      </div>
+    </div>
+    <div class="box">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi atque eveniet sequi
+      natus molestiae perspiciatis numquam, harum tenetur suscipit delectus?
+      Sunt quo est incidunt repudiandae illo iste placeat modi explicabo.
+    </div>
+  </div>
+
+  </div>
+
+  <!--Popular Categories-->
+  <section class="spark-section hero">
+    <div class="content">
+      <h3>POPULAR CATEGORIES</h3>
+      <div class="category-scroll-wrapper">
+        <button class="scroll-arrow scroll-left" id="scrollLeft" onclick="scrollTabsLeft()"
+          style="display:none;">&#10094;</button>
+        <div class="category-tabs" id="categoryTabs">
+          <button class="category-tab active" data-category="electric" onclick="switchCategory(this)">Electric</button>
+          <button class="category-tab" data-category="sports" onclick="switchCategory(this)">Sports</button>
+          <button class="category-tab" data-category="suv" onclick="switchCategory(this)">SUV</button>
+          <button class="category-tab" data-category="sedan" onclick="switchCategory(this)">Sedan</button>
+          <button class="category-tab" data-category="pickup" onclick="switchCategory(this)">Pickup Truck</button>
+          <button class="category-tab" data-category="hybrid" onclick="switchCategory(this)">Hybrid</button>
+          <button class="category-tab" data-category="diesel" onclick="switchCategory(this)">Diesel</button>
+          <button class="category-tab" data-category="coupe" onclick="switchCategory(this)">Coupe</button>
+          <button class="category-tab" data-category="convertible" onclick="switchCategory(this)">Convertible</button>
+          <button class="category-tab" data-category="wagon" onclick="switchCategory(this)">Wagon</button>
+          <button class="category-tab" data-category="minivan" onclick="switchCategory(this)">Minivan</button>
+          <button class="category-tab" data-category="luxury" onclick="switchCategory(this)">Luxury</button>
+          <button class="category-tab" data-category="offroad" onclick="switchCategory(this)">Off-Road</button>
+          <button class="category-tab" data-category="classic" onclick="switchCategory(this)">Classic</button>
+          <button class="category-tab" data-category="concept" onclick="switchCategory(this)">Concept</button>
+          <button class="category-tab" data-category="supercar" onclick="switchCategory(this)">Supercar</button>
+          <button class="category-tab" data-category="truck" onclick="switchCategory(this)">Truck</button>
+        </div>
+        <button class="scroll-arrow scroll-right" id="scrollRight" onclick="scrollTabsRight()">&#10095;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Car Cards Section -->
+  <section class="car-cards-section">
+    <h3 class="section-title">FEATURED CARS</h3>
+
+    <!-- Electric -->
+    <div class="car-cards-grid" data-category="electric">
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car3.jpg" alt="Electric 1"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Tesla Model S</h4>
+          <p contenteditable="false">Unmatched electric performance and range.</p><a href="#" class="shop-now-link">Shop
+            Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car3.jpg" alt="Electric 2"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Rivian R1T</h4>
+          <p contenteditable="false">All-electric adventure truck.</p><a href="#" class="shop-now-link">Shop Now
+            &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car3.jpg" alt="Electric 3"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Porsche Taycan</h4>
+          <p contenteditable="false">Electric speed, Porsche soul.</p><a href="#" class="shop-now-link">Shop Now
+            &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car3.jpg" alt="Electric 4"></div>
+          <div class="car-card-body">
+          <h4 contenteditable="false">BMW iX</h4>
+          <p contenteditable="false">Luxury meets electric innovation.</p><a href="#" class="shop-now-link">Shop Now
+            &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car3.jpg" alt="Electric 5"></div>
+          <div class="car-card-body">
+          <h4 contenteditable="false">Lucid Air</h4>
+          <p contenteditable="false">The most aerodynamic luxury EV.</p><a href="#" class="shop-now-link">Shop Now
+            &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+       <div class="car-card-img"><img src="images/car3.jpg" alt="Electric 6"></div>
+        <div class="car-card-body">b
+        <h4 contenteditable="false">Car Name Here</h4>
+       <p contenteditable="false">Description here.</p>
+       <a href="#" class="shop-now-link">Shop Now &rarr;</a>
+      </div>
+      </div>
+      <div class="car-card">
+       <div class="car-card-img"><img src="images/car3.jpg" alt="Electric 7"></div>
+        <div class="car-card-body">
+        <h4 contenteditable="false">Car Name Here</h4>
+       <p contenteditable="false">Description here.</p>
+       <a href="#" class="shop-now-link">Shop Now &rarr;</a>
+      </div>
+      </div>
+      <div class="car-card">
+       <div class="car-card-img"><img src="images/car3.jpg" alt="Electric 8"></div>
+        <div class="car-card-body">
+        <h4 contenteditable="false">Car Name Here</h4>
+       <p contenteditable="false">Description here.</p>
+       <a href="#" class="shop-now-link">Shop Now &rarr;</a>
+      </div>
+      </div>
+      <div class="car-card">
+       <div class="car-card-img"><img src="images/car3.jpg" alt="Electric 9"></div>
+        <div class="car-card-body">
+        <h4 contenteditable="false">Car Name Here</h4>
+       <p contenteditable="false">Description here.</p>
+       <a href="#" class="shop-now-link">Shop Now &rarr;</a>
+      </div>
+      </div>
+      <div class="car-card">
+       <div class="car-card-img"><img src="images/car3.jpg" alt="Electric 10"></div>
+        <div class="car-card-body">
+        <h4 contenteditable="false">Car Name Here</h4>
+        <p contenteditable="false">Description here.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+      </div>
+      </div>
+       <div class="car-card">
+       <div class="car-card-img"><img src="images/car3.jpg" alt="Electric 11"></div>
+        <div class="car-card-body">
+        <h4 contenteditable="false">Car Name Here</h4>
+        <p contenteditable="false">Description here.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+      </div>
+      </div>
+       <div class="car-card">
+       <div class="car-card-img"><img src="images/figure.jpg" alt="Electric 12"></div>
+        <div class="car-card-body">
+        <!-- <h4 contenteditable="false">Car Name Here</h4> -->
+        <p contenteditable="false"><strong >What to know about before purchasing an EV.</strong></p><a href="#" class="shop-now-link">Watch EV1o1 Series Now &rarr;</a>
+      </div>
+      </div>
+
+      </div> <!-- end of electric grid -->
+
+    </div>
+
+    <!-- Sports -->
+    <div class="car-cards-grid" data-category="sports" style="display:none;">
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/gtr3.jpg" alt="Sports 1"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Nissan GT-R R35</h4>
+          <p contenteditable="false">Raw power meets precision.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/gtr5.jpg" alt="Sports 2"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">GT-R Nismo</h4>
+          <p contenteditable="false">Track-ready performance.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car5.jpg" alt="Sports 3"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Toyota Supra MK5</h4>
+          <p contenteditable="false">The legend returns.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/gtr3.jpg" alt="Sports 4"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Mazda RX-7</h4>
+          <p contenteditable="false">Rotary-powered icon.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/gtr5.jpg" alt="Sports 5"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Chevrolet Corvette</h4>
+          <p contenteditable="false">American muscle, mid-engine.</p><a href="#" class="shop-now-link">Shop Now
+            &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/gtr5.jpg" alt="Sports 6"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Chevrolet Corvette</h4>
+          <p contenteditable="false">American muscle, mid-engine.</p><a href="#" class="shop-now-link">Shop Now
+            &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/gtr5.jpg" alt="Sports 7"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Chevrolet Corvette</h4>
+          <p contenteditable="false">American muscle, mid-engine.</p><a href="#" class="shop-now-link">Shop Now
+            &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/gtr5.jpg" alt="Sports 8"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Chevrolet Corvette</h4>
+          <p contenteditable="false">American muscle, mid-engine.</p><a href="#" class="shop-now-link">Shop Now
+            &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/gtr5.jpg" alt="Sports 9"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Chevrolet Corvette</h4>
+          <p contenteditable="false">American muscle, mid-engine.</p><a href="#" class="shop-now-link">Shop Now
+            &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/gtr5.jpg" alt="Sports 10"></div>
+         <div class="car-card-body">
+          <h4 contenteditable="false">Chevrolet Corvette</h4>
+          <p contenteditable="false">American muscle, mid-engine.</p><a href="#" class="shop-now-link">Shop Now
+            &rarr;</a>
+        </div>
+      </div>
+       <div class="car-card">
+        <div class="car-card-img"><img src="images/gtr5.jpg" alt="Sports 11"></div>
+         <div class="car-card-body">
+          <h4 contenteditable="false">Chevrolet Corvette</h4>
+          <p contenteditable="false">American muscle, mid-engine.</p><a href="#" class="shop-now-link">Shop Now
+            &rarr;</a>
+        </div>
+      </div>
+       <div class="car-card">
+        <div class="car-card-img"><img src="images/gtr5.jpg" alt="Sports 12"></div>
+         <div class="car-card-body">
+          <h4 contenteditable="false">Chevrolet Corvette</h4>
+          <p contenteditable="false">American muscle, mid-engine.</p><a href="#" class="shop-now-link">Shop Now
+            &rarr;</a>
+        </div>
+      </div>
+       <div class="car-card">
+        <div class="car-card-img"><img src="images/gtr5.jpg" alt="Sports 13"></div>
+         <div class="car-card-body">
+          <h4 contenteditable="false">Chevrolet Corvette</h4>
+          <p contenteditable="false">American muscle, mid-engine.</p><a href="#" class="shop-now-link">Shop Now
+            &rarr;</a>
+        </div>
+      </div>
+       <div class="car-card">
+        <div class="car-card-img"><img src="images/gtr5.jpg" alt="Sports 14"></div>
+         <div class="car-card-body">
+          <h4 contenteditable="false">Chevrolet Corvette</h4>
+          <p contenteditable="false">American muscle, mid-engine.</p><a href="#" class="shop-now-link">Shop Now
+            &rarr;</a>
+        </div>
+      </div>
+       <div class="car-card">
+        <div class="car-card-img"><img src="images/gtr5.jpg" alt="Sports 15"></div>
+         <div class="car-card-body">
+          <h4 contenteditable="false">Chevrolet Corvette</h4>
+          <p contenteditable="false">American muscle, mid-engine.</p><a href="#" class="shop-now-link">Shop Now
+            &rarr;</a>
+        </div>
+      </div>
+
+    </div><!--end of sports grid-->
+
+    <!-- SUV -->
+    <div class="car-cards-grid" data-category="suv" style="display:none;">
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car5.jpg" alt="SUV 1"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Range Rover Sport</h4>
+          <p contenteditable="false">Luxury off-road capability.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car5.jpg" alt="SUV 2"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">BMW X5</h4>
+          <p contenteditable="false">Dynamic SUV performance.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car5.jpg" alt="SUV 3"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Mercedes GLE</h4>
+          <p contenteditable="false">Comfort meets versatility.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car5.jpg" alt="SUV 4"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Audi Q7</h4>
+          <p contenteditable="false">Spacious luxury SUV.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car5.jpg" alt="SUV 5"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Porsche Cayenne</h4>
+          <p contenteditable="false">Sports car meets SUV.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+       <div class="car-card">
+        <div class="car-card-img"><img src="images/car5.jpg" alt="SUV 6"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Porsche Cayenne</h4>
+          <p contenteditable="false">Sports car meets SUV.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+       <div class="car-card">
+        <div class="car-card-img"><img src="images/car5.jpg" alt="SUV 7"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Porsche Cayenne</h4>
+          <p contenteditable="false">Sports car meets SUV.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+       <div class="car-card">
+        <div class="car-card-img"><img src="images/car5.jpg" alt="SUV 8"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Porsche Cayenne</h4>
+          <p contenteditable="false">Sports car meets SUV.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+       <div class="car-card">
+        <div class="car-card-img"><img src="images/car5.jpg" alt="SUV 9"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Porsche Cayenne</h4>
+          <p contenteditable="false">Sports car meets SUV.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+       <div class="car-card">
+        <div class="car-card-img"><img src="images/car5.jpg" alt="SUV 10"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Porsche Cayenne</h4>
+          <p contenteditable="false">Sports car meets SUV.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+        <div class="car-card">
+        <div class="car-card-img"><img src="images/car5.jpg" alt="SUV 11"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Porsche Cayenne</h4>
+          <p contenteditable="false">Sports car meets SUV.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+        <div class="car-card">
+        <div class="car-card-img"><img src="images/car5.jpg" alt="SUV 12"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Porsche Cayenne</h4>
+          <p contenteditable="false">Sports car meets SUV.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+        <div class="car-card">
+        <div class="car-card-img"><img src="images/car5.jpg" alt="SUV 13"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Porsche Cayenne</h4>
+          <p contenteditable="false">Sports car meets SUV.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+        <div class="car-card">
+        <div class="car-card-img"><img src="images/car5.jpg" alt="SUV 14"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Porsche Cayenne</h4>
+          <p contenteditable="false">Sports car meets SUV.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+        <div class="car-card">
+        <div class="car-card-img"><img src="images/car5.jpg" alt="SUV 15"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Porsche Cayenne</h4>
+          <p contenteditable="false">Sports car meets SUV.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      
+     </div> <!--end of suv grid -->
+
+    <!-- Sedan -->
+    <div class="car-cards-grid" data-category="sedan" style="display:none;">
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car3.jpg" alt="Sedan 1"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">BMW M3</h4>
+          <p contenteditable="false">The ultimate sport sedan.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car3.jpg" alt="Sedan 2"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Mercedes C-Class</h4>
+          <p contenteditable="false">Elegant and refined.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car3.jpg" alt="Sedan 3"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Audi A4</h4>
+          <p contenteditable="false">Understated luxury.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car3.jpg" alt="Sedan 4"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Lexus IS 350</h4>
+          <p contenteditable="false">Japanese precision luxury.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car3.jpg" alt="Sedan 5"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Genesis G70</h4>
+          <p contenteditable="false">The new standard in sedans.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pickup Truck -->
+    <div class="car-cards-grid" data-category="pickup" style="display:none;">
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car5.jpg" alt="Pickup 1"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Ford F-150 Raptor</h4>
+          <p contenteditable="false">Built for any terrain.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car5.jpg" alt="Pickup 2"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">RAM 1500 TRX</h4>
+          <p contenteditable="false">Hellcat-powered beast.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car5.jpg" alt="Pickup 3"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Toyota Tacoma</h4>
+          <p contenteditable="false">Reliable off-road pickup.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car5.jpg" alt="Pickup 4"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Chevrolet Silverado</h4>
+          <p contenteditable="false">Work hard, play harder.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car5.jpg" alt="Pickup 5"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Tesla Cybertruck</h4>
+          <p contenteditable="false">The future of trucks.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hybrid -->
+    <div class="car-cards-grid" data-category="hybrid" style="display:none;">
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car3.jpg" alt="Hybrid 1"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Toyota Prius</h4>
+          <p contenteditable="false">The original hybrid icon.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car3.jpg" alt="Hybrid 2"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Honda CR-V Hybrid</h4>
+          <p contenteditable="false">Efficiency meets space.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car3.jpg" alt="Hybrid 3"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Lexus RX Hybrid</h4>
+          <p contenteditable="false">Luxury hybrid SUV.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car3.jpg" alt="Hybrid 4"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Volvo XC90 Recharge</h4>
+          <p contenteditable="false">Scandinavian hybrid luxury.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car3.jpg" alt="Hybrid 5"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Ford Escape Hybrid</h4>
+          <p contenteditable="false">Versatile and fuel-efficient.</p><a href="#" class="shop-now-link">Shop Now
+            &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Diesel -->
+    <div class="car-cards-grid" data-category="diesel" style="display:none;">
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car5.jpg" alt="Diesel 1"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">RAM 2500 Cummins</h4>
+          <p contenteditable="false">Diesel torque champion.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car5.jpg" alt="Diesel 2"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Ford F-250 Diesel</h4>
+          <p contenteditable="false">Heavy-duty power.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car5.jpg" alt="Diesel 3"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Chevy Duramax</h4>
+          <p contenteditable="false">Built to tow and haul.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car5.jpg" alt="Diesel 4"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">BMW 330d</h4>
+          <p contenteditable="false">Diesel sport sedan.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car5.jpg" alt="Diesel 5"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Mercedes E 300d</h4>
+          <p contenteditable="false">Efficient German diesel luxury.</p><a href="#" class="shop-now-link">Shop Now
+            &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Coupe -->
+    <div class="car-cards-grid" data-category="coupe" style="display:none;">
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/gtr3.jpg" alt="Coupe 1"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">BMW M4</h4>
+          <p contenteditable="false">Two-door performance.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/gtr3.jpg" alt="Coupe 2"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Mercedes AMG C63</h4>
+          <p contenteditable="false">Aggressive coupe styling.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/gtr3.jpg" alt="Coupe 3"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Audi RS5</h4>
+          <p contenteditable="false">Quattro grip, coupe beauty.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/gtr3.jpg" alt="Coupe 4"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Lexus RC F</h4>
+          <p contenteditable="false">V8-powered luxury coupe.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/gtr3.jpg" alt="Coupe 5"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Infiniti Q60</h4>
+          <p contenteditable="false">Bold coupe design.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Convertible -->
+    <div class="car-cards-grid" data-category="convertible" style="display:none;">
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car5.jpg" alt="Conv 1"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Mazda MX-5 Miata</h4>
+          <p contenteditable="false">Pure open-top joy.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car5.jpg" alt="Conv 2"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">BMW Z4</h4>
+          <p contenteditable="false">Roadster thrills.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car5.jpg" alt="Conv 3"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Porsche 911 Cabrio</h4>
+          <p contenteditable="false">Iconic drop-top.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car5.jpg" alt="Conv 4"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Mercedes SL</h4>
+          <p contenteditable="false">Grand touring convertible.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car5.jpg" alt="Conv 5"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Chevrolet Corvette C8</h4>
+          <p contenteditable="false">Mid-engine open-air.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wagon -->
+    <div class="car-cards-grid" data-category="wagon" style="display:none;">
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car3.jpg" alt="Wagon 1"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Audi RS6 Avant</h4>
+          <p contenteditable="false">Super wagon perfection.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car3.jpg" alt="Wagon 2"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Volvo V60</h4>
+          <p contenteditable="false">Scandinavian practicality.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car3.jpg" alt="Wagon 3"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Mercedes E-Class Wagon</h4>
+          <p contenteditable="false">Luxury estate car.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car3.jpg" alt="Wagon 4"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">BMW 3 Series Touring</h4>
+          <p contenteditable="false">Sport wagon heritage.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car3.jpg" alt="Wagon 5"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Porsche Taycan Sport T</h4>
+          <p contenteditable="false">Electric sport wagon.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Minivan -->
+    <div class="car-cards-grid" data-category="minivan" style="display:none;">
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car3.jpg" alt="Minivan 1"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Honda Odyssey</h4>
+          <p contenteditable="false">Family favorite.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car3.jpg" alt="Minivan 2"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Toyota Sienna</h4>
+          <p contenteditable="false">Hybrid family hauler.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car3.jpg" alt="Minivan 3"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Chrysler Pacifica</h4>
+          <p contenteditable="false">Versatile and spacious.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car3.jpg" alt="Minivan 4"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Kia Carnival</h4>
+          <p contenteditable="false">SUV-styled minivan.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car3.jpg" alt="Minivan 5"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">VW Multivan</h4>
+          <p contenteditable="false">European van charm.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Luxury -->
+    <div class="car-cards-grid" data-category="luxury" style="display:none;">
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car5.jpg" alt="Luxury 1"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Rolls-Royce Ghost</h4>
+          <p contenteditable="false">The pinnacle of luxury.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car5.jpg" alt="Luxury 2"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Bentley Continental</h4>
+          <p contenteditable="false">Handcrafted grand tourer.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car5.jpg" alt="Luxury 3"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Mercedes S-Class</h4>
+          <p contenteditable="false">Technology meets opulence.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car5.jpg" alt="Luxury 4"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">BMW 7 Series</h4>
+          <p contenteditable="false">Flagship luxury sedan.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car5.jpg" alt="Luxury 5"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Audi A8</h4>
+          <p contenteditable="false">Understated elegance.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Off-Road -->
+    <div class="car-cards-grid" data-category="offroad" style="display:none;">
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car5.jpg" alt="OffRoad 1"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Jeep Wrangler</h4>
+          <p contenteditable="false">Go-anywhere capability.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car5.jpg" alt="OffRoad 2"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Toyota Land Cruiser</h4>
+          <p contenteditable="false">Legendary off-road SUV.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car5.jpg" alt="OffRoad 3"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Ford Bronco</h4>
+          <p contenteditable="false">Retro-styled trail beast.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car5.jpg" alt="OffRoad 4"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Land Rover Defender</h4>
+          <p contenteditable="false">Built for exploration.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car5.jpg" alt="OffRoad 5"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Mercedes G-Wagon</h4>
+          <p contenteditable="false">Luxury meets the wild.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Classic -->
+    <div class="car-cards-grid" data-category="classic" style="display:none;">
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/gtr3.jpg" alt="Classic 1"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Ford Mustang '67</h4>
+          <p contenteditable="false">American muscle legend.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/gtr3.jpg" alt="Classic 2"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Chevy Camaro SS '69</h4>
+          <p contenteditable="false">V8-powered nostalgia.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/gtr3.jpg" alt="Classic 3"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Porsche 911 Classic</h4>
+          <p contenteditable="false">Timeless sports car.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/gtr3.jpg" alt="Classic 4"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Jaguar E-Type</h4>
+          <p contenteditable="false">The most beautiful car ever.</p><a href="#" class="shop-now-link">Shop Now
+            &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/gtr3.jpg" alt="Classic 5"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Mercedes 300SL</h4>
+          <p contenteditable="false">Gullwing legend.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Concept -->
+    <div class="car-cards-grid" data-category="concept" style="display:none;">
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car3.jpg" alt="Concept 1"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Mercedes Vision AVTR</h4>
+          <p contenteditable="false">Inspired by the future.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car3.jpg" alt="Concept 2"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">BMW Vision Next 100</h4>
+          <p contenteditable="false">The car of tomorrow.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car3.jpg" alt="Concept 3"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Audi Skysphere</h4>
+          <p contenteditable="false">Shape-shifting roadster.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car3.jpg" alt="Concept 4"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Lexus LF-Z</h4>
+          <p contenteditable="false">Electrified concept.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/car3.jpg" alt="Concept 5"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Nissan Hyper Force</h4>
+          <p contenteditable="false">Next-gen GT-R concept.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Supercar -->
+    <div class="car-cards-grid" data-category="supercar" style="display:none;">
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/gtr5.jpg" alt="Supercar 1"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Lamborghini Huracán</h4>
+          <p contenteditable="false">Italian craftsmanship.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/gtr5.jpg" alt="Supercar 2"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Ferrari 296 GTB</h4>
+          <p contenteditable="false">Hybrid V6 fury.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/gtr5.jpg" alt="Supercar 3"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">McLaren 720S</h4>
+          <p contenteditable="false">Lightweight speed demon.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/gtr5.jpg" alt="Supercar 4"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Bugatti Chiron</h4>
+          <p contenteditable="false">1500hp hypercar.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card">
+        <div class="car-card-img"><img src="images/gtr5.jpg" alt="Supercar 5"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Pagani Huayra</h4>
+          <p contenteditable="false">Automotive art.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <span class="footer-logo">ASPIRE!</span>
+      <button class="footer-join-btn">Join now <i class="fa fa-user-plus"></i></button>
+    </div>
+    <div class="footer-links">
+      <a href="#">Help</a>
+      <a href="#">DMCA</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Contact</a>
+      <a href="#">Friends</a>
+    </div>
+    <p class="footer-copyright">Copyright &copy; 2026 Kingsley. All Rights Reserved.</p>
+    <p class="footer-disclaimer">This site does not store any files on its server. Simply because i was too lazy to
+      actually think of
+      file storage on a server, i will think of it next time .</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

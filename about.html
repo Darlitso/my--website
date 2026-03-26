@@ -1,27 +1,361 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>About Kingsley</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us — ASPIRE!</title>
+    <meta name="description"
+        content="Learn about ASPIRE! — your trusted destination for premium car sales and automotive advertising. Discover our story, values, and the team behind the brand.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Montserrat:wght@400;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="about.css">
 </head>
 
 <body class="about-body">
-    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-    Quam adipisci aspernatur a eum, quaerat aliquam aut facere ipsa odit corporis ad eligendi iure maxime,
-    pariatur minima labore magnam magni commodi.
-    <P>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae reprehenderit
-        praesentium quo necessitatibus odit ipsa enim!
-        Ab molestias ut curm! Hic minima ullam quas deleniti quo neque ducimus quidem odit.
-    </P>
+
+    <!-- Navigation Bar (same as index) -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-left">
+            <div class="dropdown-menu" id="dropdownMenu">
+                <button class="dropdown-toggle" id="dropdownToggle" onclick="toggleDropdown()">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <div class="dropdown-content" id="dropdownContent">
+                    <div class="dropdown-column">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="trending.html">Trending Cars</a></li>
+                            <li><a href="saved.html">Saved Cars</a></li>
+                            <li><a href="#">Work Here</a></li>
+                            <li><a href="#">Legal</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Cookie Settings</a></li>
+                            <li><a href="#">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <a href="index.html" style="text-decoration:none;">
+                <h1 class="navbar-logo">ASPIRE!</h1>
+            </a>
+        </div>
+        <form action="/search_results.html" method="get" class="search-form">
+            <input type="text" id="site-search" name="q" placeholder="Search...">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+        <!-- <div class="navbar-right">
+            <div class="account-menu">
+                <button class="avatar-btn">
+                    <img src="your-avatar.jpg" alt="User Profile">
+                </button>
+            </div>
+        </div> -->
+        <div class="navbar-right">
+            <div class="account-menu" id="accountMenu">
+                <button class="avatar-btn" id="avatarBtn" onclick="toggleAccountMenu()">
+                    <i class="fa fa-user-circle"></i>
+                </button>
+                <div class="account-dropdown" id="accountDropdown">
+                    <div class="account-dropdown-header">
+                        <div class="account-avatar-lg">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <p class="account-greeting">Welcome, Driver</p>
+                        <span class="account-subtext">Sign in to unlock your garage</span>
+                    </div>
+                    <div class="account-dropdown-divider"></div>
+                    <div class="account-dropdown-actions">
+                        <a href="login.html" class="account-login-btn">
+                            <i class="fa fa-sign-in"></i> Log In
+                        </a>
+                        <a href="register.html" class="account-register-btn">
+                            <i class="fa fa-rocket"></i> Register
+                        </a>
+                    </div>
+                    <div class="account-dropdown-footer">
+                        <span><i class="fa fa-lock"></i> Secure & Encrypted</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="about-hero" id="about-hero">
+        <div class="about-hero-overlay"></div>
+        <div class="about-hero-content">
+            <span class="about-hero-tag">SINCE 2038</span>
+            <h1>Driven by Passion.<br>Fueled by Trust.</h1>
+            <p>We connect car lovers with their dream machines — curating the finest vehicles and delivering an
+                unmatched buying experience.</p>
+            <a href="index.html" class="about-hero-btn">Browse Inventory &rarr;</a>
+        </div>
+    </section>
+
+    <!-- Stats Counter -->
+    <section class="about-stats">
+        <div class="stat-item">
+            <span class="stat-number" data-target="12000">0</span><span class="stat-suffix">+</span>
+            <span class="stat-label">Cars Sold</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number" data-target="98">0</span><span class="stat-suffix">%</span>
+            <span class="stat-label">Customer Satisfaction</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number" data-target="250">0</span><span class="stat-suffix">+</span>
+            <span class="stat-label">Partner Dealerships</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number" data-target="50">0</span><span class="stat-suffix">+</span>
+            <span class="stat-label">Car Brands</span>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="about-story" id="our-story">
+        <div class="about-story-inner">
+            <div class="about-story-text">
+                <span class="section-tag">OUR STORY</span>
+                <h2>More Than a Marketplace — A Movement</h2>
+                <p>ASPIRE! was born out of a simple belief: buying a car should be thrilling, not stressful. We saw an
+                    industry full of hidden fees, outdated showrooms, and impersonal service — and we set out to change
+                    it.</p>
+                <p>From our humble beginnings as a two-person garage blog reviewing cars, we've grown into a full-scale
+                    automotive platform trusted by thousands across the country. Whether you're after a daily commuter,
+                    a weekend sports car, or a luxury statement piece, ASPIRE! hand-picks every listing to ensure you're
+                    seeing only the best.</p>
+                <p>We believe that every car tells a story, and our job is to match you with the right one.</p>
+            </div>
+            <div class="about-story-image">
+                <img src="images/about-hero.png" alt="ASPIRE showroom">
+                <div class="story-image-badge">
+                    <span class="badge-number">5+</span>
+                    <span class="badge-text">Years of<br>Excellence</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="about-values" id="values">
+        <div class="about-values-inner">
+            <span class="section-tag">WHAT WE STAND FOR</span>
+            <h2>Our Core Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon"><i class="fa fa-shield"></i></div>
+                    <h3>Transparency</h3>
+                    <p>No hidden fees, no bait-and-switch. What you see is what you get — always.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fa fa-diamond"></i></div>
+                    <h3>Quality First</h3>
+                    <p>Every vehicle is inspected, verified, and curated to meet our premium standards.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fa fa-handshake-o"></i></div>
+                    <h3>Customer Obsession</h3>
+                    <p>Your dream car is our mission. We go the extra mile — literally and figuratively.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fa fa-bolt"></i></div>
+                    <h3>Innovation</h3>
+                    <p>From EV education to AI-powered recommendations, we're shaping the future of car shopping.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="about-why" id="why-us">
+        <div class="about-why-inner">
+            <div class="why-text">
+                <span class="section-tag">WHY ASPIRE!</span>
+                <h2>The ASPIRE! Difference</h2>
+                <div class="why-list">
+                    <div class="why-item">
+                        <div class="why-item-icon"><i class="fa fa-check-circle"></i></div>
+                        <div>
+                            <h4>Certified Pre-Owned Guarantee</h4>
+                            <p>Every pre-owned vehicle goes through a rigorous 150-point inspection before listing.</p>
+                        </div>
+                    </div>
+                    <div class="why-item">
+                        <div class="why-item-icon"><i class="fa fa-check-circle"></i></div>
+                        <div>
+                            <h4>Price-Match Promise</h4>
+                            <p>Found a better deal? We'll match it — no questions asked.</p>
+                        </div>
+                    </div>
+                    <div class="why-item">
+                        <div class="why-item-icon"><i class="fa fa-check-circle"></i></div>
+                        <div>
+                            <h4>Seamless Online-to-Offline</h4>
+                            <p>Browse online, test-drive in person. We bridge the digital and physical car-buying
+                                experience.</p>
+                        </div>
+                    </div>
+                    <div class="why-item">
+                        <div class="why-item-icon"><i class="fa fa-check-circle"></i></div>
+                        <div>
+                            <h4>Lifetime Support</h4>
+                            <p>Our relationship doesn't end at the sale. Enjoy ongoing maintenance tips, trade-in
+                                options, and priority service.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="why-image">
+                <img src="images/car1.jpg" alt="Premium car at ASPIRE">
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="about-testimonials" id="testimonials">
+        <div class="about-testimonials-inner">
+            <span class="section-tag">TESTIMONIALS</span>
+            <h2>What Our Customers Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                            class="fa fa-star"></i><i class="fa fa-star"></i>
+                    </div>
+                    <p>"ASPIRE! made finding my dream BMW M4 absolutely effortless. The team was transparent,
+                        professional, and genuinely excited to help me. I'll never shop for a car anywhere else."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JM</div>
+                        <div>
+                            <strong>James M.</strong>
+                            <span>BMW M4 Owner</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                            class="fa fa-star"></i><i class="fa fa-star"></i>
+                    </div>
+                    <p>"As a first-time buyer, I was nervous. The ASPIRE! team walked me through every step — from
+                        financing to test drives. I drove home in a gorgeous Tesla Model S!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SN</div>
+                        <div>
+                            <strong>Sarah N.</strong>
+                            <span>Tesla Model S Owner</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                            class="fa fa-star"></i><i class="fa fa-star-half-o"></i>
+                    </div>
+                    <p>"The price-match promise is real. I tested it, and they delivered. Incredible service, incredible
+                        cars, incredible people. 10/10 would recommend ASPIRE! to anyone."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">DK</div>
+                        <div>
+                            <strong>David K.</strong>
+                            <span>Range Rover Sport Owner</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="about-cta">
+        <div class="about-cta-inner">
+            <h2>Ready to Find Your Next Car?</h2>
+            <p>Browse thousands of premium listings, compare prices, and drive away in the car of your dreams.</p>
+            <div class="cta-buttons">
+                <a href="index.html" class="cta-btn cta-btn-primary">Explore Cars</a>
+                <a href="mailto:contact@aspire-cars.com" class="cta-btn cta-btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <span class="footer-logo">ASPIRE!</span>
+            <button class="footer-join-btn">Join Our Community</button>
+        </div>
+        <div class="footer-links">
+            <a href="about.html">About</a>
+            <a href="trending.html">Trending</a>
+            <a href="#">Careers</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Contact</a>
+        </div>
+        <p class="footer-copyright">&copy; 2026 ASPIRE! All rights reserved.</p>
+        <p class="footer-disclaimer">ASPIRE! is a registered trademark. Pricing, availability, and specifications are
+            subject to change without notice.</p>
+    </footer>
+
+    <!-- Dropdown Script -->
+    <script>
+        function toggleDropdown() {
+            document.getElementById('dropdownContent').classList.toggle('open');
+        }
+        document.addEventListener('click', function (e) {
+            const menu = document.getElementById('dropdownMenu');
+            if (!menu.contains(e.target)) {
+                document.getElementById('dropdownContent').classList.remove('open');
+            }
+        });
+
+        // Animate stats counter on scroll
+        const statNumbers = document.querySelectorAll('.stat-number');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const target = parseInt(el.getAttribute('data-target'));
+                    let current = 0;
+                    const increment = Math.ceil(target / 60);
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        el.textContent = current.toLocaleString();
+                    }, 25);
+                    observer.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+        statNumbers.forEach(n => observer.observe(n));
+
+        // Fade-in on scroll
+        const fadeEls = document.querySelectorAll('.about-story, .about-values, .about-why, .about-testimonials, .about-cta');
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    fadeObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        fadeEls.forEach(el => fadeObserver.observe(el));
+    </script>
+    <script src="script.js"></script>
+
 </body>
-<div class="footer-fixed">
-    <form action="feedback.html" method="get">
-        <input type="text" name="feedback" placeholder="Enter your feedback">
-        <button type="submit">Submit Feedback</button>
-    </form>
-</div>
 
 </html>

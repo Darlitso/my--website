@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us — ASPIRE!</title>
+    <meta name="description"
+        content="Get in touch with the ASPIRE! team. Whether you have questions about a vehicle, need support, or want to partner with us — we'd love to hear from you.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Montserrat:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="contact.css">
+</head>
+
+<body class="contact-body">
+
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-left">
+            <div class="dropdown-menu" id="dropdownMenu">
+                <button class="dropdown-toggle" id="dropdownToggle" onclick="toggleDropdown()">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <div class="dropdown-content" id="dropdownContent">
+                    <div class="dropdown-column">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="trending.html">Trending Cars</a></li>
+                            <li><a href="saved.html">Saved Cars</a></li>
+                            <li><a href="#">Work Here</a></li>
+                            <li><a href="#">Legal</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="#">Cookie Settings</a></li>
+                            <li><a href="#">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <a href="index.html" style="text-decoration:none;">
+                <h1 class="navbar-logo">ASPIRE!</h1>
+            </a>
+        </div>
+        <form action="/search_results.html" method="get" class="search-form">
+            <input type="text" id="site-search" name="q" placeholder="Search...">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+        <div class="navbar-right">
+            <div class="account-menu" id="accountMenu">
+                <button class="avatar-btn" id="avatarBtn" onclick="toggleAccountMenu()">
+                    <i class="fa fa-user-circle"></i>
+                </button>
+                <div class="account-dropdown" id="accountDropdown">
+                    <div class="account-dropdown-header">
+                        <div class="account-avatar-lg">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <p class="account-greeting">Welcome, Driver</p>
+                        <span class="account-subtext">Sign in to unlock your garage</span>
+                    </div>
+                    <div class="account-dropdown-divider"></div>
+                    <div class="account-dropdown-actions">
+                        <a href="login.html" class="account-login-btn">
+                            <i class="fa fa-sign-in"></i> Log In
+                        </a>
+                        <a href="register.html" class="account-register-btn">
+                            <i class="fa fa-rocket"></i> Register
+                        </a>
+                    </div>
+                    <div class="account-dropdown-footer">
+                        <span><i class="fa fa-lock"></i> Secure & Encrypted</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="contact-hero">
+        <div class="contact-hero-overlay"></div>
+        <div class="contact-hero-content">
+            <span class="contact-hero-tag">GET IN TOUCH</span>
+            <h1>Let's Start a<br>Conversation.</h1>
+            <p>Have a question about a vehicle? Need support? Want to partner with us? We're here and ready to help.</p>
+        </div>
+    </section>
+
+    <!-- Contact Info Cards -->
+    <section class="contact-info-section">
+        <div class="contact-info-grid">
+            <div class="contact-info-card">
+                <div class="contact-info-icon"><i class="fa fa-map-marker"></i></div>
+                <h3>Visit Us</h3>
+                <p>123 Aspire Boulevard<br>Automotive District<br>Johannesburg, SA 2000</p>
+            </div>
+            <div class="contact-info-card">
+                <div class="contact-info-icon"><i class="fa fa-phone"></i></div>
+                <h3>Call Us</h3>
+                <p>Sales: +27 11 234 5678<br>Support: +27 11 234 5679<br>Mon–Fri: 8AM – 6PM</p>
+            </div>
+            <div class="contact-info-card">
+                <div class="contact-info-icon"><i class="fa fa-envelope"></i></div>
+                <h3>Email Us</h3>
+                <p>General: hello@aspire-cars.com<br>Sales: sales@aspire-cars.com<br>Support: help@aspire-cars.com</p>
+            </div>
+            <div class="contact-info-card">
+                <div class="contact-info-icon"><i class="fa fa-clock-o"></i></div>
+                <h3>Business Hours</h3>
+                <p>Monday – Friday: 8AM – 6PM<br>Saturday: 9AM – 4PM<br>Sunday: Closed</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form-section" id="contact-form">
+        <div class="contact-form-inner">
+            <div class="contact-form-text">
+                <span class="section-tag">SEND A MESSAGE</span>
+                <h2>We'd Love to Hear From You</h2>
+                <p>Whether you're looking for your dream car, have questions about financing, or want to schedule a test
+                    drive — drop us a message and our team will get back to you within 24 hours.</p>
+                <div class="contact-form-features">
+                    <div class="contact-feature">
+                        <i class="fa fa-check-circle"></i>
+                        <span>Response within 24 hours</span>
+                    </div>
+                    <div class="contact-feature">
+                        <i class="fa fa-check-circle"></i>
+                        <span>Dedicated car specialist assigned</span>
+                    </div>
+                    <div class="contact-feature">
+                        <i class="fa fa-check-circle"></i>
+                        <span>Free consultation on any vehicle</span>
+                    </div>
+                    <div class="contact-feature">
+                        <i class="fa fa-check-circle"></i>
+                        <span>No spam, no sharing your data</span>
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form" id="contactForm" onsubmit="handleContactSubmit(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="contact-name">Full Name</label>
+                        <input type="text" id="contact-name" name="name" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-email">Email Address</label>
+                        <input type="email" id="contact-email" name="email" placeholder="john@example.com" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="contact-phone">Phone Number</label>
+                        <input type="tel" id="contact-phone" name="phone" placeholder="+27 12 345 6789">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-subject">Subject</label>
+                        <select id="contact-subject" name="subject" required>
+                            <option value="" disabled selected>Select a topic</option>
+                            <option value="buying">Buying a Car</option>
+                            <option value="selling">Selling a Car</option>
+                            <option value="test-drive">Schedule a Test Drive</option>
+                            <option value="financing">Financing & Payments</option>
+                            <option value="support">Customer Support</option>
+                            <option value="partnership">Partnership / Business</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group full-width">
+                    <label for="contact-message">Your Message</label>
+                    <textarea id="contact-message" name="message" rows="5"
+                        placeholder="Tell us what's on your mind..." required></textarea>
+                </div>
+                <button type="submit" class="contact-submit-btn" id="contactSubmitBtn">
+                    <i class="fa fa-paper-plane"></i> Send Message
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Map / Location Section -->
+    <section class="contact-map-section">
+        <div class="contact-map-inner">
+            <div class="contact-map-text">
+                <span class="section-tag">FIND US</span>
+                <h2>Visit Our Showroom</h2>
+                <p>Come experience our curated collection of premium vehicles in person. Our showroom is designed to
+                    give you a luxury experience from the moment you walk in.</p>
+                <div class="showroom-features">
+                    <div class="showroom-feature">
+                        <i class="fa fa-car"></i>
+                        <span>100+ Cars on Display</span>
+                    </div>
+                    <div class="showroom-feature">
+                        <i class="fa fa-coffee"></i>
+                        <span>Complimentary Refreshments</span>
+                    </div>
+                    <div class="showroom-feature">
+                        <i class="fa fa-road"></i>
+                        <span>On-site Test Drive Track</span>
+                    </div>
+                    <div class="showroom-feature">
+                        <i class="fa fa-wifi"></i>
+                        <span>Free Wi-Fi & Lounge</span>
+                    </div>
+                </div>
+                <a href="https://maps.google.com" target="_blank" class="directions-btn">
+                    <i class="fa fa-location-arrow"></i> Get Directions
+                </a>
+            </div>
+            <div class="contact-map-visual">
+                <div class="map-placeholder">
+                    <i class="fa fa-map"></i>
+                    <span>Interactive Map</span>
+                    <p>123 Aspire Boulevard, Johannesburg</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="contact-faq-section" id="faq">
+        <div class="contact-faq-inner">
+            <span class="section-tag">FREQUENTLY ASKED</span>
+            <h2>Common Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <div class="faq-question">
+                        <span>How do I schedule a test drive?</span>
+                        <i class="fa fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Simply fill out the contact form above and select "Schedule a Test Drive" as your subject. Or call us directly at +27 11 234 5678 and we'll arrange a convenient time for you.</p>
+                    </div>
+                </div>
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <div class="faq-question">
+                        <span>Do you offer financing options?</span>
+                        <i class="fa fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We partner with multiple banks and financial institutions to offer competitive financing rates. We also offer in-house financing plans tailored to your budget.</p>
+                    </div>
+                </div>
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <div class="faq-question">
+                        <span>Can I trade in my current vehicle?</span>
+                        <i class="fa fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely. We accept trade-ins on all vehicle purchases. Bring your car to our showroom for a free on-the-spot valuation, or use our online trade-in calculator.</p>
+                    </div>
+                </div>
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <div class="faq-question">
+                        <span>What is your return policy?</span>
+                        <i class="fa fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We offer a 7-day money-back guarantee on all purchases. If you're not 100% satisfied with your vehicle, return it within 7 days for a full refund — no questions asked.</p>
+                    </div>
+                </div>
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <div class="faq-question">
+                        <span>Do you deliver nationwide?</span>
+                        <i class="fa fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer nationwide delivery across South Africa. Delivery fees vary based on distance. For international inquiries, please contact our sales team directly.</p>
+                    </div>
+                </div>
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <div class="faq-question">
+                        <span>Are all vehicles inspected before sale?</span>
+                        <i class="fa fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Every vehicle goes through our rigorous 150-point inspection process before being listed. We also provide a full vehicle history report with every purchase.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <span class="footer-logo">ASPIRE!</span>
+            <button class="footer-join-btn">Join Our Community</button>
+        </div>
+        <div class="footer-links">
+            <a href="about.html">About</a>
+            <a href="trending.html">Trending</a>
+            <a href="#">Careers</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <p class="footer-copyright">&copy; 2026 ASPIRE! All rights reserved.</p>
+        <p class="footer-disclaimer">ASPIRE! is a registered trademark. Pricing, availability, and specifications are
+            subject to change without notice.</p>
+    </footer>
+
+    <!-- Toast -->
+    <div class="contact-toast" id="contactToast"></div>
+
+    <script>
+        // Dropdown toggle
+        function toggleDropdown() {
+            document.getElementById('dropdownContent').classList.toggle('open');
+        }
+        document.addEventListener('click', function (e) {
+            var menu = document.getElementById('dropdownMenu');
+            if (!menu.contains(e.target)) {
+                document.getElementById('dropdownContent').classList.remove('open');
+            }
+            var accountMenu = document.getElementById('accountMenu');
+            if (accountMenu && !accountMenu.contains(e.target)) {
+                document.getElementById('accountDropdown').classList.remove('open');
+                document.getElementById('avatarBtn').classList.remove('active');
+            }
+        });
+
+        // Avatar menu toggle
+        function toggleAccountMenu() {
+            document.getElementById('accountDropdown').classList.toggle('open');
+            document.getElementById('avatarBtn').classList.toggle('active');
+        }
+
+        // FAQ Toggle
+        function toggleFaq(item) {
+            var isOpen = item.classList.contains('open');
+            // Close all
+            document.querySelectorAll('.faq-item').forEach(function (faq) {
+                faq.classList.remove('open');
+            });
+            // Open clicked if it wasn't open
+            if (!isOpen) {
+                item.classList.add('open');
+            }
+        }
+
+        // Contact form handler
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            var btn = document.getElementById('contactSubmitBtn');
+            btn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Sending...';
+            btn.disabled = true;
+
+            setTimeout(function () {
+                btn.innerHTML = '<i class="fa fa-check"></i> Message Sent!';
+                btn.style.background = 'linear-gradient(135deg, #00c853, #00e676)';
+                showContactToast('✅ Message sent successfully! We\'ll get back to you within 24 hours.');
+
+                setTimeout(function () {
+                    document.getElementById('contactForm').reset();
+                    btn.innerHTML = '<i class="fa fa-paper-plane"></i> Send Message';
+                    btn.disabled = false;
+                    btn.style.background = '';
+                }, 3000);
+            }, 1500);
+        }
+
+        function showContactToast(message) {
+            var toast = document.getElementById('contactToast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(function () {
+                toast.classList.remove('show');
+            }, 4000);
+        }
+
+        // Fade-in on scroll
+        var fadeEls = document.querySelectorAll('.contact-info-section, .contact-form-section, .contact-map-section, .contact-faq-section');
+        var fadeObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    fadeObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        fadeEls.forEach(function (el) { fadeObserver.observe(el); });
+    </script>
+
+</body>
+
+</html>

@@ -34,7 +34,7 @@
               <li><a href="#">Legal</a></li>
               <li><a href="#">Privacy Policy</a></li>
               <li><a href="#">Terms of Service</a></li>
-              <li><a href="#">Contact Us</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
               <li><a href="#">Cookie Settings</a></li>
               <li><a href="#">Cookie Policy</a></li>
             </ul>
@@ -45,34 +45,47 @@
     </div>
 
     <!-- Right: Search + Auth buttons -->
-       <form action="/search_results.html" method="get" class="search-form">
-        <input type="text" id="site-search" name="q" placeholder="Search...">
-        <button type="submit"><i class="fa fa-search"></i></button>
-      </form>
-      <!-- <button class="login-button"><a href="login.html"></a>login</button>
+    <form action="/search_results.html" method="get" class="search-form">
+      <input type="text" id="site-search" name="q" placeholder="Search...">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+    <!-- <button class="login-button"><a href="login.html"></a>login</button>
       <button class="register-button">Register</button> -->
     <div class="navbar-right">
-      <div class="account-menu">
-        <button class="avatar-btn">
-          <img src="your-avatar.jpg" alt="User Profile">
+      <div class="account-menu" id="accountMenu">
+        <button class="avatar-btn" id="avatarBtn" onclick="toggleAccountMenu()">
+          <i class="fa fa-user-circle"></i>
         </button>
-        <div class="dropdown-content">
-        <div class="user-info">
-          <strong>Guest</strong>
-          <p>Welcome!</p>
+        <div class="account-dropdown" id="accountDropdown">
+          <div class="account-dropdown-header">
+            <div class="account-avatar-lg">
+              <i class="fa fa-user"></i>
+            </div>
+            <p class="account-greeting">Welcome, Driver</p>
+            <span class="account-subtext">Sign in to unlock your garage</span>
+          </div>
+          <div class="account-dropdown-divider"></div>
+          <div class="account-dropdown-actions">
+            <a href="login.html" class="account-login-btn">
+              <i class="fa fa-sign-in"></i> Log In
+            </a>
+            <a href="register.html" class="account-register-btn">
+              <i class="fa fa-rocket"></i> Register
+            </a>
+          </div>
+          <div class="account-dropdown-footer">
+            <span><i class="fa fa-lock"></i> Secure & Encrypted</span>
+          </div>
         </div>
-        <hr>
-        <a href="/login">Log In</a>
-        <a href="/signup" class="highlight">Create Account</a>
       </div>
-    
     </div>
-  </div>
-      
+
   </nav>
   <div class="container">
     <div class="box">
-      <p><h2>Vroom with a View</h2></p>
+      <p>
+      <h2>Vroom with a View</h2>
+      </p>
       <p>Feel the Thrill. Own the Road</p>
       <div class="image-container">
         <!-- <img src="images/Tai Long.jpg" alt="Description of the image"> -->
@@ -123,101 +136,138 @@
 
     <!-- Electric -->
     <div class="car-cards-grid" data-category="electric">
-      <div class="car-card">
-        <div class="car-card-img"><img src="images/car3.jpg" alt="Electric 1"></div>
+      <div class="car-card" data-car-name="Tesla Model S" data-car-img="images/tesla model s.jpg"
+        data-car-desc="The Tesla Model S redefines electric luxury with its sleek design, blistering acceleration, and industry-leading range. Featuring a minimalist interior with a 17-inch touchscreen, over-the-air updates, and Autopilot capabilities."
+        data-car-price="$79,990" data-car-range="405 mi" data-car-speed="0-60 in 1.99s" data-car-drive="AWD Dual Motor"
+        data-car-seats="5" data-car-year="2025" data-car-hp="1,020 hp">
+        <div class="car-card-img"><img src="images/tesla model s.jpg" alt="Electric 1"></div>
         <div class="car-card-body">
           <h4 contenteditable="false">Tesla Model S</h4>
-          <p contenteditable="false">Unmatched electric performance and range.</p><a href="#" class="shop-now-link">Shop
-            Now &rarr;</a>
+          <p contenteditable="false">Unmatched electric performance and range.</p>
+          <a href="#" class="shop-now-link" onclick="openCarModal(this); return false;">Shop Now &rarr;</a>
         </div>
       </div>
-      <div class="car-card">
-        <div class="car-card-img"><img src="images/car3.jpg" alt="Electric 2"></div>
+      <div class="car-card" data-car-name="Rivian R1T" data-car-img="images/rivian r1t.jpg"
+        data-car-desc="The Rivian R1T is the world's first electric adventure truck, combining rugged off-road capability with zero emissions. Features a unique gear tunnel, quad-motor AWD, and a premium interior built for explorers."
+        data-car-price="$73,000" data-car-range="328 mi" data-car-speed="0-60 in 3.0s" data-car-drive="AWD Quad Motor"
+        data-car-seats="5" data-car-year="2025" data-car-hp="835 hp">
+        <div class="car-card-img"><img src="images/rivian r1t.jpg" alt="Electric 2"></div>
         <div class="car-card-body">
           <h4 contenteditable="false">Rivian R1T</h4>
-          <p contenteditable="false">All-electric adventure truck.</p><a href="#" class="shop-now-link">Shop Now
-            &rarr;</a>
+          <p contenteditable="false">All-electric adventure truck.</p>
+          <a href="#" class="shop-now-link" onclick="openCarModal(this); return false;">Shop Now &rarr;</a>
         </div>
       </div>
-      <div class="car-card">
-        <div class="car-card-img"><img src="images/car3.jpg" alt="Electric 3"></div>
+      <div class="car-card" data-car-name="Porsche Taycan" data-car-img="images/porsche taycan.jpg"
+        data-car-desc="The Porsche Taycan brings legendary Porsche performance into the electric era. With its stunning design, precise handling, two-speed transmission, and up to 800V architecture for ultra-fast charging."
+        data-car-price="$92,900" data-car-range="246 mi" data-car-speed="0-60 in 2.4s" data-car-drive="AWD Dual Motor"
+        data-car-seats="4" data-car-year="2025" data-car-hp="750 hp">
+        <div class="car-card-img"><img src="images/porsche taycan.jpg" alt="Electric 3"></div>
         <div class="car-card-body">
           <h4 contenteditable="false">Porsche Taycan</h4>
-          <p contenteditable="false">Electric speed, Porsche soul.</p><a href="#" class="shop-now-link">Shop Now
-            &rarr;</a>
+          <p contenteditable="false">Electric speed, Porsche soul.</p>
+          <a href="#" class="shop-now-link" onclick="openCarModal(this); return false;">Shop Now &rarr;</a>
         </div>
       </div>
-      <div class="car-card">
-        <div class="car-card-img"><img src="images/car3.jpg" alt="Electric 4"></div>
-          <div class="car-card-body">
+      <div class="car-card" data-car-name="BMW iX" data-car-img="images/bmw ix.jpg"
+        data-car-desc="The BMW iX is a bold statement in electric luxury SUV design. Featuring a spacious lounge-like interior, advanced iDrive 8 system, sustainable materials, and effortless electric driving dynamics."
+        data-car-price="$87,100" data-car-range="324 mi" data-car-speed="0-60 in 3.6s" data-car-drive="AWD Dual Motor"
+        data-car-seats="5" data-car-year="2025" data-car-hp="516 hp">
+        <div class="car-card-img"><img src="images/bmw ix.jpg" alt="Electric 4"></div>
+        <div class="car-card-body">
           <h4 contenteditable="false">BMW iX</h4>
-          <p contenteditable="false">Luxury meets electric innovation.</p><a href="#" class="shop-now-link">Shop Now
-            &rarr;</a>
+          <p contenteditable="false">Luxury meets electric innovation.</p>
+          <a href="#" class="shop-now-link" onclick="openCarModal(this); return false;">Shop Now &rarr;</a>
         </div>
       </div>
-      <div class="car-card">
-        <div class="car-card-img"><img src="images/car3.jpg" alt="Electric 5"></div>
-          <div class="car-card-body">
+      <div class="car-card" data-car-name="Lucid Air" data-car-img="images/lucid air.jpg"
+        data-car-desc="The Lucid Air is the most aerodynamic luxury EV ever made, offering an astounding 516-mile range. Its spacious Glass Canopy roof, 34-inch curved display, and DreamDrive Pro ADAS set new standards."
+        data-car-price="$87,400" data-car-range="516 mi" data-car-speed="0-60 in 1.89s" data-car-drive="AWD Dual Motor"
+        data-car-seats="5" data-car-year="2025" data-car-hp="1,234 hp">
+        <div class="car-card-img"><img src="images/lucid air.jpg" alt="Electric 5"></div>
+        <div class="car-card-body">
           <h4 contenteditable="false">Lucid Air</h4>
-          <p contenteditable="false">The most aerodynamic luxury EV.</p><a href="#" class="shop-now-link">Shop Now
-            &rarr;</a>
+          <p contenteditable="false">The most aerodynamic luxury EV.</p>
+          <a href="#" class="shop-now-link" onclick="openCarModal(this); return false;">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card" data-car-name="Mercedes EQS" data-car-img="images/mercedes eqs.jpg"
+        data-car-desc="The Mercedes EQS is the electric flagship of Mercedes-Benz, combining S-Class luxury with zero emissions. Features the revolutionary Hyperscreen dashboard, whisper-quiet cabin, and innovative rear-axle steering."
+        data-car-price="$104,400" data-car-range="350 mi" data-car-speed="0-60 in 3.4s" data-car-drive="AWD Dual Motor"
+        data-car-seats="5" data-car-year="2025" data-car-hp="649 hp">
+        <div class="car-card-img"><img src="images/mercedes eqs.jpg" alt="Electric 6"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Mercedes EQS</h4>
+          <p contenteditable="false">Electric S-Class luxury redefined.</p>
+          <a href="#" class="shop-now-link" onclick="openCarModal(this); return false;">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card" data-car-name="Audi e-tron GT" data-car-img="images/audi etron.jpg"
+        data-car-desc="The Audi e-tron GT is a breathtaking electric grand tourer that combines Audi's design heritage with futuristic performance. Built on the same J1 platform as the Porsche Taycan, it delivers thrilling dynamics."
+        data-car-price="$106,500" data-car-range="238 mi" data-car-speed="0-60 in 3.1s" data-car-drive="AWD Quattro"
+        data-car-seats="4" data-car-year="2025" data-car-hp="637 hp">
+        <div class="car-card-img"><img src="images/audi etron.jpg" alt="Electric 7"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Audi e-tron GT</h4>
+          <p contenteditable="false">Electric grand touring perfection.</p>
+          <a href="#" class="shop-now-link" onclick="openCarModal(this); return false;">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card" data-car-name="Hyundai Ioniq 6" data-car-img="images/hyundai.jpg"
+        data-car-desc="The Hyundai Ioniq 6 is a stunning streamliner EV with one of the lowest drag coefficients in its class. Offering 800V ultra-fast charging, a pixel-themed design, and spacious interior at an incredible value."
+        data-car-price="$42,450" data-car-range="361 mi" data-car-speed="0-60 in 5.0s" data-car-drive="RWD / AWD"
+        data-car-seats="5" data-car-year="2025" data-car-hp="320 hp">
+        <div class="car-card-img"><img src="images/hyundai.jpg" alt="Electric 8"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Hyundai Ioniq 6</h4>
+          <p contenteditable="false">Streamlined electric elegance.</p>
+          <a href="#" class="shop-now-link" onclick="openCarModal(this); return false;">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card" data-car-name="Kia EV6 GT" data-car-img="images/kia ev6.jpg"
+        data-car-desc="The Kia EV6 GT is a performance-focused electric crossover with a bold design language. Featuring 800V architecture, vehicle-to-load capability, and a driver-focused cockpit with dual curved displays."
+        data-car-price="$56,900" data-car-range="206 mi" data-car-speed="0-60 in 3.4s" data-car-drive="AWD Dual Motor"
+        data-car-seats="5" data-car-year="2025" data-car-hp="576 hp">
+        <div class="car-card-img"><img src="images/kia ev6.jpg" alt="Electric 9"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Kia EV6 GT</h4>
+          <p contenteditable="false">Bold performance, electrified.</p>
+          <a href="#" class="shop-now-link" onclick="openCarModal(this); return false;">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card" data-car-name="Ford Mustang Mach-E" data-car-img="images/mach e.jpg"
+        data-car-desc="The Ford Mustang Mach-E brings pony car attitude to the electric SUV segment. With its muscular design, impressive range, BlueCruise hands-free driving, and Ford's legendary performance heritage."
+        data-car-price="$44,995" data-car-range="312 mi" data-car-speed="0-60 in 3.5s" data-car-drive="AWD / RWD"
+        data-car-seats="5" data-car-year="2025" data-car-hp="480 hp">
+        <div class="car-card-img"><img src="images/mach e.jpg" alt="Electric 10"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Ford Mustang Mach-E</h4>
+          <p contenteditable="false">The electric pony car.</p>
+          <a href="#" class="shop-now-link" onclick="openCarModal(this); return false;">Shop Now &rarr;</a>
+        </div>
+      </div>
+      <div class="car-card" data-car-name="Volkswagen ID.4" data-car-img="images/volkswagen id4.jpg"
+        data-car-desc="The Volkswagen ID.4 is a practical and spacious electric SUV designed for everyday driving. With a clean design, intuitive infotainment, and excellent value, it makes EV ownership accessible to all."
+        data-car-price="$39,735" data-car-range="275 mi" data-car-speed="0-60 in 5.4s" data-car-drive="AWD / RWD"
+        data-car-seats="5" data-car-year="2025" data-car-hp="295 hp">
+        <div class="car-card-img"><img src="images/volkswagen id4.jpg" alt="Electric 11"></div>
+        <div class="car-card-body">
+          <h4 contenteditable="false">Volkswagen ID.4</h4>
+          <p contenteditable="false">Everyday electric for everyone.</p>
+          <a href="#" class="shop-now-link" onclick="openCarModal(this); return false;">Shop Now &rarr;</a>
         </div>
       </div>
       <div class="car-card">
-       <div class="car-card-img"><img src="images/car3.jpg" alt="Electric 6"></div>
-        <div class="car-card-body">b
-        <h4 contenteditable="false">Car Name Here</h4>
-       <p contenteditable="false">Description here.</p>
-       <a href="#" class="shop-now-link">Shop Now &rarr;</a>
-      </div>
-      </div>
-      <div class="car-card">
-       <div class="car-card-img"><img src="images/car3.jpg" alt="Electric 7"></div>
+        <div class="car-card-img"><img src="images/figure.jpg" alt="Electric 12"></div>
         <div class="car-card-body">
-        <h4 contenteditable="false">Car Name Here</h4>
-       <p contenteditable="false">Description here.</p>
-       <a href="#" class="shop-now-link">Shop Now &rarr;</a>
-      </div>
-      </div>
-      <div class="car-card">
-       <div class="car-card-img"><img src="images/car3.jpg" alt="Electric 8"></div>
-        <div class="car-card-body">
-        <h4 contenteditable="false">Car Name Here</h4>
-       <p contenteditable="false">Description here.</p>
-       <a href="#" class="shop-now-link">Shop Now &rarr;</a>
-      </div>
-      </div>
-      <div class="car-card">
-       <div class="car-card-img"><img src="images/car3.jpg" alt="Electric 9"></div>
-        <div class="car-card-body">
-        <h4 contenteditable="false">Car Name Here</h4>
-       <p contenteditable="false">Description here.</p>
-       <a href="#" class="shop-now-link">Shop Now &rarr;</a>
-      </div>
-      </div>
-      <div class="car-card">
-       <div class="car-card-img"><img src="images/car3.jpg" alt="Electric 10"></div>
-        <div class="car-card-body">
-        <h4 contenteditable="false">Car Name Here</h4>
-        <p contenteditable="false">Description here.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
-      </div>
-      </div>
-       <div class="car-card">
-       <div class="car-card-img"><img src="images/car3.jpg" alt="Electric 11"></div>
-        <div class="car-card-body">
-        <h4 contenteditable="false">Car Name Here</h4>
-        <p contenteditable="false">Description here.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
-      </div>
-      </div>
-       <div class="car-card">
-       <div class="car-card-img"><img src="images/figure.jpg" alt="Electric 12"></div>
-        <div class="car-card-body">
-        <!-- <h4 contenteditable="false">Car Name Here</h4> -->
-        <p contenteditable="false"><strong >What to know about before purchasing an EV.</strong></p><a href="#" class="shop-now-link">Watch EV1o1 Series Now &rarr;</a>
-      </div>
+          <p contenteditable="false"><strong>What to know before purchasing an EV.</strong></p><a href="#"
+            class="shop-now-link"><a
+              href=https://www.youtube.com/watch?v=ZvpRGLPgSAE&pp=ygUNRVYgMTAxIHNlcmllc9IHCQnDCgGHKiGM7w%3D%3D">Watch
+              EV1o1 Series Now &rarr;</a>
+        </div>
       </div>
 
-      </div> <!-- end of electric grid -->
+    </div> <!-- end of electric grid -->
 
     </div>
 
@@ -228,7 +278,7 @@
         <div class="car-card-body">
           <h4 contenteditable="false">Nissan GT-R R35</h4>
           <p contenteditable="false">Raw power meets precision.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
-        </div>
+        </div>.
       </div>
       <div class="car-card">
         <div class="car-card-img"><img src="images/gtr5.jpg" alt="Sports 2"></div>
@@ -293,47 +343,47 @@
       </div>
       <div class="car-card">
         <div class="car-card-img"><img src="images/gtr5.jpg" alt="Sports 10"></div>
-         <div class="car-card-body">
+        <div class="car-card-body">
           <h4 contenteditable="false">Chevrolet Corvette</h4>
           <p contenteditable="false">American muscle, mid-engine.</p><a href="#" class="shop-now-link">Shop Now
             &rarr;</a>
         </div>
       </div>
-       <div class="car-card">
+      <div class="car-card">
         <div class="car-card-img"><img src="images/gtr5.jpg" alt="Sports 11"></div>
-         <div class="car-card-body">
+        <div class="car-card-body">
           <h4 contenteditable="false">Chevrolet Corvette</h4>
           <p contenteditable="false">American muscle, mid-engine.</p><a href="#" class="shop-now-link">Shop Now
             &rarr;</a>
         </div>
       </div>
-       <div class="car-card">
+      <div class="car-card">
         <div class="car-card-img"><img src="images/gtr5.jpg" alt="Sports 12"></div>
-         <div class="car-card-body">
+        <div class="car-card-body">
           <h4 contenteditable="false">Chevrolet Corvette</h4>
           <p contenteditable="false">American muscle, mid-engine.</p><a href="#" class="shop-now-link">Shop Now
             &rarr;</a>
         </div>
       </div>
-       <div class="car-card">
+      <div class="car-card">
         <div class="car-card-img"><img src="images/gtr5.jpg" alt="Sports 13"></div>
-         <div class="car-card-body">
+        <div class="car-card-body">
           <h4 contenteditable="false">Chevrolet Corvette</h4>
           <p contenteditable="false">American muscle, mid-engine.</p><a href="#" class="shop-now-link">Shop Now
             &rarr;</a>
         </div>
       </div>
-       <div class="car-card">
+      <div class="car-card">
         <div class="car-card-img"><img src="images/gtr5.jpg" alt="Sports 14"></div>
-         <div class="car-card-body">
+        <div class="car-card-body">
           <h4 contenteditable="false">Chevrolet Corvette</h4>
           <p contenteditable="false">American muscle, mid-engine.</p><a href="#" class="shop-now-link">Shop Now
             &rarr;</a>
         </div>
       </div>
-       <div class="car-card">
+      <div class="car-card">
         <div class="car-card-img"><img src="images/gtr5.jpg" alt="Sports 15"></div>
-         <div class="car-card-body">
+        <div class="car-card-body">
           <h4 contenteditable="false">Chevrolet Corvette</h4>
           <p contenteditable="false">American muscle, mid-engine.</p><a href="#" class="shop-now-link">Shop Now
             &rarr;</a>
@@ -348,7 +398,8 @@
         <div class="car-card-img"><img src="images/car5.jpg" alt="SUV 1"></div>
         <div class="car-card-body">
           <h4 contenteditable="false">Range Rover Sport</h4>
-          <p contenteditable="false">Luxury off-road capability.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+          <p contenteditable="false">Luxury off-road capability.</p><a href="#" class="shop-now-link">Shop Now
+            &rarr;</a>
         </div>
       </div>
       <div class="car-card">
@@ -379,78 +430,78 @@
           <p contenteditable="false">Sports car meets SUV.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
         </div>
       </div>
-       <div class="car-card">
+      <div class="car-card">
         <div class="car-card-img"><img src="images/car5.jpg" alt="SUV 6"></div>
         <div class="car-card-body">
           <h4 contenteditable="false">Porsche Cayenne</h4>
           <p contenteditable="false">Sports car meets SUV.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
         </div>
       </div>
-       <div class="car-card">
+      <div class="car-card">
         <div class="car-card-img"><img src="images/car5.jpg" alt="SUV 7"></div>
         <div class="car-card-body">
           <h4 contenteditable="false">Porsche Cayenne</h4>
           <p contenteditable="false">Sports car meets SUV.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
         </div>
       </div>
-       <div class="car-card">
+      <div class="car-card">
         <div class="car-card-img"><img src="images/car5.jpg" alt="SUV 8"></div>
         <div class="car-card-body">
           <h4 contenteditable="false">Porsche Cayenne</h4>
           <p contenteditable="false">Sports car meets SUV.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
         </div>
       </div>
-       <div class="car-card">
+      <div class="car-card">
         <div class="car-card-img"><img src="images/car5.jpg" alt="SUV 9"></div>
         <div class="car-card-body">
           <h4 contenteditable="false">Porsche Cayenne</h4>
           <p contenteditable="false">Sports car meets SUV.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
         </div>
       </div>
-       <div class="car-card">
+      <div class="car-card">
         <div class="car-card-img"><img src="images/car5.jpg" alt="SUV 10"></div>
         <div class="car-card-body">
           <h4 contenteditable="false">Porsche Cayenne</h4>
           <p contenteditable="false">Sports car meets SUV.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
         </div>
       </div>
-        <div class="car-card">
+      <div class="car-card">
         <div class="car-card-img"><img src="images/car5.jpg" alt="SUV 11"></div>
         <div class="car-card-body">
           <h4 contenteditable="false">Porsche Cayenne</h4>
           <p contenteditable="false">Sports car meets SUV.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
         </div>
       </div>
-        <div class="car-card">
+      <div class="car-card">
         <div class="car-card-img"><img src="images/car5.jpg" alt="SUV 12"></div>
         <div class="car-card-body">
           <h4 contenteditable="false">Porsche Cayenne</h4>
           <p contenteditable="false">Sports car meets SUV.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
         </div>
       </div>
-        <div class="car-card">
+      <div class="car-card">
         <div class="car-card-img"><img src="images/car5.jpg" alt="SUV 13"></div>
         <div class="car-card-body">
           <h4 contenteditable="false">Porsche Cayenne</h4>
           <p contenteditable="false">Sports car meets SUV.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
         </div>
       </div>
-        <div class="car-card">
+      <div class="car-card">
         <div class="car-card-img"><img src="images/car5.jpg" alt="SUV 14"></div>
         <div class="car-card-body">
           <h4 contenteditable="false">Porsche Cayenne</h4>
           <p contenteditable="false">Sports car meets SUV.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
         </div>
       </div>
-        <div class="car-card">
+      <div class="car-card">
         <div class="car-card-img"><img src="images/car5.jpg" alt="SUV 15"></div>
         <div class="car-card-body">
           <h4 contenteditable="false">Porsche Cayenne</h4>
           <p contenteditable="false">Sports car meets SUV.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
         </div>
       </div>
-      
-     </div> <!--end of suv grid -->
+
+    </div> <!--end of suv grid -->
 
     <!-- Sedan -->
     <div class="car-cards-grid" data-category="sedan" style="display:none;">
@@ -486,7 +537,8 @@
         <div class="car-card-img"><img src="images/car3.jpg" alt="Sedan 5"></div>
         <div class="car-card-body">
           <h4 contenteditable="false">Genesis G70</h4>
-          <p contenteditable="false">The new standard in sedans.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+          <p contenteditable="false">The new standard in sedans.</p><a href="#" class="shop-now-link">Shop Now
+            &rarr;</a>
         </div>
       </div>
     </div>
@@ -557,7 +609,8 @@
         <div class="car-card-img"><img src="images/car3.jpg" alt="Hybrid 4"></div>
         <div class="car-card-body">
           <h4 contenteditable="false">Volvo XC90 Recharge</h4>
-          <p contenteditable="false">Scandinavian hybrid luxury.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+          <p contenteditable="false">Scandinavian hybrid luxury.</p><a href="#" class="shop-now-link">Shop Now
+            &rarr;</a>
         </div>
       </div>
       <div class="car-card">
@@ -630,7 +683,8 @@
         <div class="car-card-img"><img src="images/gtr3.jpg" alt="Coupe 3"></div>
         <div class="car-card-body">
           <h4 contenteditable="false">Audi RS5</h4>
-          <p contenteditable="false">Quattro grip, coupe beauty.</p><a href="#" class="shop-now-link">Shop Now &rarr;</a>
+          <p contenteditable="false">Quattro grip, coupe beauty.</p><a href="#" class="shop-now-link">Shop Now
+            &rarr;</a>
         </div>
       </div>
       <div class="car-card">
@@ -973,7 +1027,7 @@
       <a href="#">Help</a>
       <a href="#">DMCA</a>
       <a href="#">Terms of Use</a>
-      <a href="#">Contact</a>
+      <a href="contact.html">Contact</a>
       <a href="#">Friends</a>
     </div>
     <p class="footer-copyright">Copyright &copy; 2026 Kingsley. All Rights Reserved.</p>
@@ -981,6 +1035,70 @@
       actually think of
       file storage on a server, i will think of it next time .</p>
   </footer>
+
+  <!-- Car Detail Modal -->
+  <div class="car-modal-overlay" id="carModalOverlay" onclick="closeCarModal()">
+    <div class="car-modal" onclick="event.stopPropagation()">
+      <button class="car-modal-close" onclick="closeCarModal()">&times;</button>
+      <div class="car-modal-hero">
+        <img id="modalCarImg" src="" alt="Car Image">
+        <div class="car-modal-hero-overlay">
+          <span class="car-modal-badge"><i class="fa fa-bolt"></i> Electric</span>
+        </div>
+      </div>
+      <div class="car-modal-content">
+        <div class="car-modal-header">
+          <h2 id="modalCarName"></h2>
+          <span class="car-modal-price" id="modalCarPrice"></span>
+        </div>
+        <p class="car-modal-desc" id="modalCarDesc"></p>
+        <div class="car-modal-specs">
+          <div class="car-modal-spec">
+            <i class="fa fa-road"></i>
+            <span class="spec-value" id="modalCarRange"></span>
+            <span class="spec-label">Range</span>
+          </div>
+          <div class="car-modal-spec">
+            <i class="fa fa-tachometer"></i>
+            <span class="spec-value" id="modalCarSpeed"></span>
+            <span class="spec-label">Acceleration</span>
+          </div>
+          <div class="car-modal-spec">
+            <i class="fa fa-flash"></i>
+            <span class="spec-value" id="modalCarHp"></span>
+            <span class="spec-label">Horsepower</span>
+          </div>
+          <div class="car-modal-spec">
+            <i class="fa fa-cogs"></i>
+            <span class="spec-value" id="modalCarDrive"></span>
+            <span class="spec-label">Drivetrain</span>
+          </div>
+          <div class="car-modal-spec">
+            <i class="fa fa-users"></i>
+            <span class="spec-value" id="modalCarSeats"></span>
+            <span class="spec-label">Seats</span>
+          </div>
+          <div class="car-modal-spec">
+            <i class="fa fa-calendar"></i>
+            <span class="spec-value" id="modalCarYear"></span>
+            <span class="spec-label">Model Year</span>
+          </div>
+        </div>
+        <div class="car-modal-actions">
+          <button class="car-modal-save-btn" id="modalSaveBtn" onclick="toggleSaveCar()">
+            <i class="fa fa-heart-o" id="modalSaveIcon"></i> Save to Garage
+          </button>
+          <button class="car-modal-buy-btn"
+            onclick="alert('Thank you for your interest! A representative will contact you shortly.')">
+            <i class="fa fa-car"></i> Request Purchase
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast notification -->
+  <div class="car-toast" id="carToast"></div>
 
   <script src="script.js"></script>
 

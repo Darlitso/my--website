@@ -40,7 +40,7 @@
   font-family: 'Montserrat', sans-serif;
   font-size: 22px;
   font-weight: 700;
-  color: rgb(0, 0, 0);
+  color: black;
   margin: 0;
   letter-spacing: 1px;
   text-shadow: 0 1px 6px rgba(244, 241, 241, 0.4);
@@ -111,9 +111,214 @@
   transition: background 0.2s ease, transform 0.15s ease;
 }
 
+/* ===== Premium Avatar Dropdown ===== */
 .account-menu {
-  display: flex;
+  position: relative;
+}
 
+.avatar-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  background: linear-gradient(135deg, #0d1b2a, #1b2838);
+  color: #e0e6ed;
+  font-size: 22px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0 0 rgba(0, 123, 255, 0);
+  position: relative;
+  overflow: hidden;
+}
+
+.avatar-btn::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, #007bff, #00d4ff, #007bff);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.avatar-btn:hover {
+  border-color: rgba(0, 123, 255, 0.6);
+  color: #ffffff;
+  transform: scale(1.08);
+  box-shadow: 0 0 18px rgba(0, 123, 255, 0.35);
+}
+
+.avatar-btn:hover::before {
+  opacity: 1;
+}
+
+.avatar-btn.active {
+  border-color: #007bff;
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.45);
+  color: #ffffff;
+}
+
+/* Dropdown panel */
+.account-dropdown {
+  position: absolute;
+  top: 58px;
+  right: 0;
+  width: 280px;
+  background: linear-gradient(165deg, rgba(13, 27, 42, 0.97), rgba(27, 40, 56, 0.97));
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55), 0 0 40px rgba(0, 123, 255, 0.08);
+  padding: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-12px) scale(0.96);
+  transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+  z-index: 1002;
+  overflow: hidden;
+}
+
+.account-dropdown.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+/* Header section */
+.account-dropdown-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 28px 24px 20px;
+  background: linear-gradient(180deg, rgba(0, 123, 255, 0.1) 0%, transparent 100%);
+}
+
+.account-avatar-lg {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #007bff, #00d4ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: #ffffff;
+  margin-bottom: 14px;
+  box-shadow: 0 4px 20px rgba(0, 123, 255, 0.4);
+  animation: avatar-pulse 3s ease-in-out infinite;
+}
+
+@keyframes avatar-pulse {
+
+  0%,
+  100% {
+    box-shadow: 0 4px 20px rgba(0, 123, 255, 0.4);
+  }
+
+  50% {
+    box-shadow: 0 4px 30px rgba(0, 123, 255, 0.65);
+  }
+}
+
+.account-greeting {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 4px;
+  letter-spacing: 0.5px;
+}
+
+.account-subtext {
+  font-family: 'Playfair Display', serif;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.45);
+  text-align: center;
+}
+
+/* Divider */
+.account-dropdown-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 123, 255, 0.3), transparent);
+  margin: 0 20px;
+}
+
+/* Action buttons */
+.account-dropdown-actions {
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.account-login-btn,
+.account-register-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.account-login-btn {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+.account-login-btn:hover {
+  background: linear-gradient(135deg, #0090ff, #007bff);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(0, 123, 255, 0.5);
+}
+
+.account-register-btn {
+  background: transparent;
+  color: #e0e6ed;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.account-register-btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(0, 123, 255, 0.4);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Footer */
+.account-dropdown-footer {
+  padding: 12px 24px;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.account-dropdown-footer span {
+  font-family: 'Playfair Display', serif;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.account-dropdown-footer .fa {
+  font-size: 10px;
 }
 
 .login-button:hover {
@@ -230,8 +435,9 @@
   font-family: 'Montserrat', sans-serif;
   font-size: 20px;
   font-weight: 700;
-  color: #fff;
-  margin-bottom: 20px;
+  backdrop-filter: blur(10px);
+  color: #ffffff;
+  margin-bottom: 10px;
   letter-spacing: 1px;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 }
@@ -243,7 +449,7 @@
 }
 
 .car-card {
-  background: rgba(255, 255, 255, 0.92);
+  background: linear-gradient(rgba(13, 27, 42, 0.95));
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
@@ -281,14 +487,14 @@
   font-size: 13px;
   font-weight: 700;
   margin: 0 0 6px 0;
-  color: #1a1a1a;
+  color: white;
   outline: none;
 }
 
 .car-card-body p {
   font-family: 'Playfair Display', serif;
   font-size: 11px;
-  color: #555;
+  color: white;
   margin: 0 0 10px 0;
   flex-grow: 1;
   line-height: 1.4;
@@ -306,7 +512,7 @@
   font-family: 'Montserrat', sans-serif;
   font-size: 12px;
   font-weight: bold;
-  color: #007bff;
+  color: #00d4ff;
   text-decoration: none;
   transition: color 0.2s ease;
 }
@@ -324,7 +530,7 @@
 
 .dropdown-toggle {
   background: transparent;
-  color: black;
+  color: rgb(3, 3, 3);
   border: none;
   padding: 6px 8px;
   font-size: 22px;
@@ -453,16 +659,317 @@
   font-size: 12px;
 }
 
+/* ===== Car Detail Modal ===== */
+.car-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.35s ease;
+}
 
+.car-modal-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
 
+.car-modal {
+  width: 90%;
+  max-width: 720px;
+  max-height: 90vh;
+  background: linear-gradient(170deg, #0d1b2a 0%, #1b2838 50%, #0d1b2a 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  overflow: hidden;
+  overflow-y: auto;
+  position: relative;
+  transform: translateY(30px) scale(0.95);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6), 0 0 60px rgba(0, 123, 255, 0.08);
+}
 
-.about-body {
-  font-size: 20px;
-  font-family: 'Playfair Display', serif;
+.car-modal-overlay.open .car-modal {
+  transform: translateY(0) scale(1);
+}
+
+/* Scrollbar styling for the modal */
+.car-modal::-webkit-scrollbar {
+  width: 6px;
+}
+
+.car-modal::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.car-modal::-webkit-scrollbar-thumb {
+  background: rgba(0, 123, 255, 0.3);
+  border-radius: 3px;
+}
+
+/* Close button */
+.car-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  color: #ffffff;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+}
+
+.car-modal-close:hover {
+  background: rgba(255, 59, 48, 0.8);
+  transform: rotate(90deg);
+}
+
+/* Hero image area */
+.car-modal-hero {
+  width: 100%;
+  height: 280px;
+  position: relative;
+  overflow: hidden;
+}
+
+.car-modal-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.car-modal:hover .car-modal-hero img {
+  transform: scale(1.03);
+}
+
+.car-modal-hero-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 24px;
+  background: linear-gradient(transparent, rgba(13, 27, 42, 0.95));
+  display: flex;
+  align-items: flex-end;
+}
+
+.car-modal-badge {
+  background: linear-gradient(135deg, #00c853, #00e676);
+  color: #0d1b2a;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
   font-weight: 700;
-  background-image: url("images/car3.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Modal content */
+.car-modal-content {
+  padding: 28px 32px 32px;
+}
+
+.car-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.car-modal-header h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.car-modal-price {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #00d4ff;
+  text-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+.car-modal-desc {
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.7;
+  margin: 0 0 24px;
+}
+
+/* Specs grid */
+.car-modal-specs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.car-modal-spec {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  padding: 16px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+}
+
+.car-modal-spec:hover {
+  background: rgba(0, 123, 255, 0.08);
+  border-color: rgba(0, 123, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.car-modal-spec .fa {
+  font-size: 20px;
+  color: #007bff;
+  margin-bottom: 4px;
+}
+
+.car-modal-spec .spec-value {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.car-modal-spec .spec-label {
+  font-family: 'Playfair Display', serif;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Action buttons */
+.car-modal-actions {
+  display: flex;
+  gap: 14px;
+}
+
+.car-modal-save-btn,
+.car-modal-buy-btn {
+  flex: 1;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.car-modal-save-btn {
+  background: rgba(255, 255, 255, 0.06);
+  color: #e0e6ed;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.car-modal-save-btn:hover {
+  background: rgba(255, 59, 48, 0.12);
+  border-color: rgba(255, 59, 48, 0.3);
+  color: #ff6b6b;
+}
+
+.car-modal-save-btn.saved {
+  background: rgba(255, 59, 48, 0.15);
+  border-color: rgba(255, 59, 48, 0.4);
+  color: #ff6b6b;
+}
+
+.car-modal-buy-btn {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 123, 255, 0.3);
+}
+
+.car-modal-buy-btn:hover {
+  background: linear-gradient(135deg, #0090ff, #007bff);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 123, 255, 0.45);
+}
+
+/* Toast notification */
+.car-toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: linear-gradient(135deg, #0d1b2a, #1b2838);
+  color: #ffffff;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 123, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 3000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.car-toast.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Responsive modal */
+@media (max-width: 600px) {
+  .car-modal-specs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .car-modal-actions {
+    flex-direction: column;
+  }
+
+  .car-modal-header h2 {
+    font-size: 20px;
+  }
+
+  .car-modal-hero {
+    height: 200px;
+  }
+
+  .car-modal-content {
+    padding: 20px;
+  }
 }
